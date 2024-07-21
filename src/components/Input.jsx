@@ -1,3 +1,3 @@
-function Input({ type, cvsubmit = false }) {}
+function Input({ content, status }) {}
 
 export default Input;

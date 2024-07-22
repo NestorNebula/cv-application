@@ -6,12 +6,14 @@ function Section({ type, cvsubmit = false }) {
     return (
       <section className={type}>
         <Form type={type} />
+        <button>Submit</button>
       </section>
     );
   } else {
     return (
       <section className={type}>
         <List type={type} />
+        <button>Submit</button>
       </section>
     );
   }

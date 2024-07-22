@@ -1,7 +1,7 @@
-function Input({ content, value, update, status }) {
+function Input({ content, label, value, update, status }) {
   return (
     <>
-      <label htmlFor={content}>{content}: </label>
+      <label htmlFor={content}>{label}: </label>
       <input id={content} value={value} onChange={update}></input>
     </>
   );

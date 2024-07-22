@@ -20,9 +20,19 @@ function Form({ type, cvsubmit = false }) {
     }
     return (
       <form>
-        <Input content="Name" value={name} update={updateName} />
-        <Input content="Email" value={email} update={updateEmail} />
-        <Input content="Phone number" value={phone} update={updatePhone} />
+        <Input content="name" label="Name" value={name} update={updateName} />
+        <Input
+          content="email"
+          label="Email"
+          value={email}
+          update={updateEmail}
+        />
+        <Input
+          content="phonenumber"
+          label="Phone number"
+          value={phone}
+          update={updatePhone}
+        />
       </form>
     );
   }
@@ -37,6 +47,46 @@ function Form({ type, cvsubmit = false }) {
       <form>
         <label htmlFor="aboutme">About me: </label>
         <textarea id="aboutme" value={text} onChange={updateText}></textarea>
+      </form>
+    );
+  }
+  if (type === 'edexperience') {
+    const [schoolName, setSchoolName] = useState('');
+    const [study, setStudy] = useState('');
+    const [studyDate, setStudyDate] = useState('');
+
+    function updateSchoolName(e) {
+      setSchoolName(e.target.value);
+    }
+
+    function updateStudy(e) {
+      setStudy(e.target.value);
+    }
+
+    function updateStudyDate(e) {
+      setStudyDate(e.target.value);
+    }
+
+    return (
+      <form>
+        <Input
+          content="schoolname"
+          label="School Name"
+          value={schoolName}
+          update={updateSchoolName}
+        />
+        <Input
+          content="study"
+          label="Study"
+          value={study}
+          update={updateStudy}
+        />
+        <Input
+          content="studydate"
+          label="Study Date"
+          value={studyDate}
+          update={setStudyDate}
+        />
       </form>
     );
   }

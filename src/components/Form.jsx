@@ -26,6 +26,20 @@ function Form({ type, cvsubmit = false }) {
       </form>
     );
   }
+  if (type === 'aboutme') {
+    const [text, setText] = useState('');
+
+    function updateText(e) {
+      setText(e.target.value);
+      console.log(text);
+    }
+    return (
+      <form>
+        <label htmlFor="aboutme">About me: </label>
+        <textarea id="aboutme" value={text} onChange={updateText}></textarea>
+      </form>
+    );
+  }
 }
 
 export default Form;

@@ -85,8 +85,61 @@ function Form({ type, cvsubmit = false }) {
           content="studydate"
           label="Study Date"
           value={studyDate}
-          update={setStudyDate}
+          update={updateStudyDate}
         />
+      </form>
+    );
+  }
+
+  if (type === 'jobexperience') {
+    // Company name, Position title, job description, date
+    const [position, setPosition] = useState('');
+    const [company, setCompany] = useState('');
+    const [jobDate, setJobDate] = useState('');
+    const [description, setDescription] = useState('');
+
+    function updatePosition(e) {
+      setPosition(e.target.value);
+    }
+
+    function updateCompany(e) {
+      setCompany(e.target.value);
+    }
+
+    function updateJobDate(e) {
+      setJobDate(e.target.value);
+    }
+
+    function updateDescription(e) {
+      setDescription(e.target.value);
+    }
+
+    return (
+      <form>
+        <Input
+          content="position"
+          label="Position Title"
+          value={position}
+          update={updatePosition}
+        />
+        <Input
+          content="company"
+          label="Company"
+          value={company}
+          update={updateCompany}
+        />
+        <Input
+          content="jobdate"
+          label="Job Date"
+          value={jobDate}
+          update={updateJobDate}
+        />
+        <label htmlFor="desc">Description: </label>
+        <textarea
+          id="desc"
+          value={description}
+          onChange={updateDescription}
+        ></textarea>
       </form>
     );
   }

@@ -8,21 +8,21 @@ function Section({ type, cvsubmit = false }) {
   function updateSubmit() {
     setSubmit(!submit);
   }
-  if (type === 'informations' || type === 'aboutme') {
-    return (
-      <section className={type}>
-        <Form type={type} />
-        <button onClick={updateSubmit}>Submit</button>
-      </section>
-    );
-  } else {
-    return (
-      <section className={type}>
-        <List type={type} />
-        <button onClick={updateSubmit}>Submit</button>
-      </section>
+
+  function checkType() {
+    return type === 'informations' || type === 'aboutme' ? (
+      <Form type={type} />
+    ) : (
+      <List type={type} />
     );
   }
+
+  return (
+    <section className={type}>
+      {checkType()}
+      <button onClick={updateSubmit}>Submit</button>
+    </section>
+  );
 }
 
 export default Section;

@@ -6,46 +6,63 @@ function Form({ type, id, cvsubmit = false }) {
     {
       content: 'name',
       label: 'Name',
+      type: 'input',
     },
     {
       content: 'email',
       label: 'Email',
+      type: 'input',
     },
     {
       content: 'phone',
       label: 'Phone',
+      type: 'input',
     },
   ];
   const edexperience = [
     {
       content: 'schoolname',
       label: 'School Name',
+      type: 'input',
     },
     {
       content: 'study',
       label: 'Study',
+      type: 'input',
     },
     {
       content: 'studyperiod',
       label: 'Study Period',
+      type: 'input',
     },
   ];
   const jobexperience = [
     {
       content: 'position',
       label: 'Position Title',
+      type: 'input',
     },
     {
       content: 'company',
       label: 'Company',
+      type: 'input',
     },
     {
       content: 'jobperiod',
       label: 'Job Period',
+      type: 'input',
     },
     {
       content: 'description',
       label: 'Description',
+      type: 'textarea',
+    },
+  ];
+  const skills = [
+    {
+      content: 'skill',
+      label: 'Skill',
+      type: 'input',
     },
   ];
   let section;
@@ -58,6 +75,9 @@ function Form({ type, id, cvsubmit = false }) {
       break;
     case 'jobexperience':
       section = jobexperience;
+      break;
+    case 'skills':
+      section = skills;
       break;
     default:
       const [text, setText] = useState('');
@@ -94,42 +114,40 @@ function Form({ type, id, cvsubmit = false }) {
     setFourth(e.target.value);
   }
 
-  function checkDesc() {
-    if (section[3]) {
-      return (
-        <>
-          <label htmlFor={section[3].content + id}>{section[3].label}</label>
-          <textarea
-            id={section[3].content + id}
-            value={fourth}
-            onChange={updateFourth}
-          ></textarea>
-        </>
-      );
+  function checkContent(index, value, onChange) {
+    if (section[index]) {
+      if (section[index].type === 'textarea') {
+        return (
+          <>
+            <label htmlFor={section[index].content + id}>
+              {section[index].label}
+            </label>
+            <textarea
+              id={section[index].content + id}
+              value={value}
+              onChange={onChange}
+            ></textarea>
+          </>
+        );
+      } else {
+        return (
+          <Input
+            content={section[index].content + id}
+            label={section[index].label}
+            value={value}
+            update={onChange}
+          />
+        );
+      }
     }
   }
 
   return (
     <form>
-      <Input
-        content={section[0].content + id}
-        label={section[0].label}
-        value={first}
-        update={updateFirst}
-      />
-      <Input
-        content={section[1].content + id}
-        label={section[1].label}
-        value={second}
-        update={updateSecond}
-      />
-      <Input
-        content={section[2].content + id}
-        label={section[2].label}
-        value={third}
-        update={updateThird}
-      />
-      {checkDesc()}
+      {checkContent(0, first, updateFirst)}
+      {checkContent(1, second, updateSecond)}
+      {checkContent(2, third, updateThird)}
+      {checkContent(3, fourth, updateFourth)}
     </form>
   );
 }

@@ -6,15 +6,12 @@ function List({ type, cvsubmit = false }) {
   const [list, setList] = useState([
     {
       id: uuid(),
-      content: <Form type={type} />,
     },
     {
       id: uuid(),
-      content: <Form type={type} />,
     },
     {
       id: uuid(),
-      content: <Form type={type} />,
     },
   ]);
 
@@ -23,7 +20,6 @@ function List({ type, cvsubmit = false }) {
       ...list,
       {
         id: uuid(),
-        content: <Form type={type} />,
       },
     ]);
   }
@@ -32,7 +28,9 @@ function List({ type, cvsubmit = false }) {
     <>
       <ul>
         {list.map((li) => (
-          <li key={li.id}>{li.content}</li>
+          <li key={li.id}>
+            <Form type={type} id={li.id} />
+          </li>
         ))}
       </ul>
       <button onClick={updateList}>Add</button>

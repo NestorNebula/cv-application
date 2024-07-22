@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Input from './Input';
 
-function Form({ type, cvsubmit = false }) {
+function Form({ type, id, cvsubmit = false }) {
   if (type === 'informations') {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -70,19 +70,19 @@ function Form({ type, cvsubmit = false }) {
     return (
       <form>
         <Input
-          content="schoolname"
+          content={`schoolname${id}`}
           label="School Name"
           value={schoolName}
           update={updateSchoolName}
         />
         <Input
-          content="study"
+          content={`study${id}`}
           label="Study"
           value={study}
           update={updateStudy}
         />
         <Input
-          content="studydate"
+          content={`studydate${id}`}
           label="Study Date"
           value={studyDate}
           update={updateStudyDate}
@@ -92,7 +92,6 @@ function Form({ type, cvsubmit = false }) {
   }
 
   if (type === 'jobexperience') {
-    // Company name, Position title, job description, date
     const [position, setPosition] = useState('');
     const [company, setCompany] = useState('');
     const [jobDate, setJobDate] = useState('');
@@ -117,26 +116,26 @@ function Form({ type, cvsubmit = false }) {
     return (
       <form>
         <Input
-          content="position"
+          content={`position${id}`}
           label="Position Title"
           value={position}
           update={updatePosition}
         />
         <Input
-          content="company"
+          content={`company${id}`}
           label="Company"
           value={company}
           update={updateCompany}
         />
         <Input
-          content="jobdate"
+          content={`jobdate${id}`}
           label="Job Date"
           value={jobDate}
           update={updateJobDate}
         />
-        <label htmlFor="desc">Description: </label>
+        <label htmlFor={`desc${id}`}>Description: </label>
         <textarea
-          id="desc"
+          id={`desc${id}`}
           value={description}
           onChange={updateDescription}
         ></textarea>

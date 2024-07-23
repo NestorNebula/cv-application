@@ -1,6 +1,6 @@
 function Input({ content, label, value, update, className, status }) {
   return (
-    <div className={className}>
+    <div className={className + 'input'}>
       <label className="inputlabel" htmlFor={content}>
         {label + ': '}
       </label>

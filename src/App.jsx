@@ -5,8 +5,8 @@ function App() {
   return (
     <>
       <Section type="informations" />
-      <Section type="edexperience" />
-      <Section type="jobexperience" />
+      <Section type="education" />
+      <Section type="experience" />
       <Section type="aboutme" />
       <Section type="skills" />
     </>

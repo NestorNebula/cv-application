@@ -5,6 +5,8 @@ import List from './List';
 function Section({ type, cvsubmit = false }) {
   const [submit, setSubmit] = useState(false);
 
+  const headerName = type === 'aboutme' ? 'about me' : type;
+
   function updateSubmit() {
     setSubmit(!submit);
   }
@@ -19,6 +21,7 @@ function Section({ type, cvsubmit = false }) {
 
   return (
     <section className={type}>
+      <h2>{headerName}</h2>
       {checkType()}
       {submit ? (
         <button onClick={updateSubmit}>Edit</button>

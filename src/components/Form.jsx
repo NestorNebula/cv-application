@@ -18,8 +18,13 @@ function Form({ type, id, submit, cvsubmit = false }) {
       label: 'Phone',
       type: 'input',
     },
+    {
+      content: 'address',
+      label: 'Address',
+      type: 'input',
+    },
   ];
-  const edexperience = [
+  const education = [
     {
       content: 'schoolname',
       label: 'School Name',
@@ -36,7 +41,7 @@ function Form({ type, id, submit, cvsubmit = false }) {
       type: 'input',
     },
   ];
-  const jobexperience = [
+  const experience = [
     {
       content: 'position',
       label: 'Position Title',
@@ -77,11 +82,11 @@ function Form({ type, id, submit, cvsubmit = false }) {
     case 'informations':
       section = informations;
       break;
-    case 'edexperience':
-      section = edexperience;
+    case 'education':
+      section = education;
       break;
-    case 'jobexperience':
-      section = jobexperience;
+    case 'experience':
+      section = experience;
       break;
     case 'skills':
       section = skills;

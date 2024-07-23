@@ -23,6 +23,9 @@ function List({ type, submit, cvsubmit = false }) {
       },
     ]);
   }
+  function removeElement(e) {
+    setList(list.filter((li) => li.id !== e.target.id));
+  }
 
   return (
     <>
@@ -30,6 +33,11 @@ function List({ type, submit, cvsubmit = false }) {
         {list.map((li) => (
           <li key={li.id}>
             <Form type={type} submit={submit} id={li.id} />
+            {submit ? null : (
+              <button className="removebtn" id={li.id} onClick={removeElement}>
+                Remove
+              </button>
+            )}
           </li>
         ))}
       </ul>

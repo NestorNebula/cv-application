@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Input from './Input';
 
-function Form({ type, id, cvsubmit = false }) {
+function Form({ type, id, submit, cvsubmit = false }) {
   const informations = [
     {
       content: 'name',
@@ -98,58 +98,59 @@ function Form({ type, id, cvsubmit = false }) {
   const [third, setThird] = useState('');
   const [fourth, setFourth] = useState('');
 
-  function updateFirst(e) {
-    setFirst(e.target.value);
-  }
+  const values = [first, second, third, fourth];
 
-  function updateSecond(e) {
-    setSecond(e.target.value);
-  }
+  const updates = [
+    function updateFirst(e) {
+      setFirst(e.target.value);
+    },
 
-  function updateThird(e) {
-    setThird(e.target.value);
-  }
+    function updateSecond(e) {
+      setSecond(e.target.value);
+    },
 
-  function updateFourth(e) {
-    setFourth(e.target.value);
-  }
+    function updateThird(e) {
+      setThird(e.target.value);
+    },
 
-  function checkContent(index, value, onChange) {
-    if (section[index]) {
-      if (section[index].type === 'textarea') {
-        return (
-          <>
-            <label htmlFor={section[index].content + id}>
-              {section[index].label}
-            </label>
+    function updateFourth(e) {
+      setFourth(e.target.value);
+    },
+  ];
+
+  function populateForm() {
+    const formContent = [];
+    for (let i = 0; i < section.length; i++) {
+      if (section[i].type === 'textarea') {
+        formContent.push(
+          <label
+            key={section[i.content] + 'label' + id}
+            htmlFor={section[i].content + id}
+          >
+            {section[i].label}
             <textarea
-              id={section[index].content + id}
-              value={value}
-              onChange={onChange}
+              id={section[i].content + id}
+              value={values[i]}
+              onChange={updates[i]}
             ></textarea>
-          </>
+          </label>
         );
       } else {
-        return (
+        formContent.push(
           <Input
-            content={section[index].content + id}
-            label={section[index].label}
-            value={value}
-            update={onChange}
+            content={section[i].content + id}
+            label={section[i].label}
+            value={values[i]}
+            update={updates[i]}
+            key={section[i].content + id}
           />
         );
       }
     }
+    return formContent;
   }
 
-  return (
-    <form>
-      {checkContent(0, first, updateFirst)}
-      {checkContent(1, second, updateSecond)}
-      {checkContent(2, third, updateThird)}
-      {checkContent(3, fourth, updateFourth)}
-    </form>
-  );
+  return <form>{populateForm().map((part) => part)}</form>;
 }
 
 export default Form;

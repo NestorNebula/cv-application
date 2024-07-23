@@ -9,7 +9,7 @@ function App() {
     setCvSubmit(!cvsubmit);
   }
   return (
-    <>
+    <main>
       <Section type="informations" cvsubmit={cvsubmit} />
       <Section type="education" cvsubmit={cvsubmit} />
       <Section type="experience" cvsubmit={cvsubmit} />
@@ -20,7 +20,7 @@ function App() {
           Submit CV
         </button>
       )}
-    </>
+    </main>
   );
 }
 

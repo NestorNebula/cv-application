@@ -33,7 +33,7 @@ function List({ type, submit, cvsubmit = false }) {
           </li>
         ))}
       </ul>
-      <button onClick={updateList}>Add</button>
+      {submit ? null : <button onClick={updateList}>Add</button>}
     </>
   );
 }

@@ -20,7 +20,11 @@ function Section({ type, cvsubmit = false }) {
   return (
     <section className={type}>
       {checkType()}
-      <button onClick={updateSubmit}>Submit</button>
+      {submit ? (
+        <button onClick={updateSubmit}>Edit</button>
+      ) : (
+        <button onClick={updateSubmit}>Submit</button>
+      )}
     </section>
   );
 }

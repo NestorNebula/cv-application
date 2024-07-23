@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Form from './Form';
 import { v4 as uuid } from 'uuid';
+import addBtn from '../assets/add.png';
+import removeBtn from '../assets/remove.png';
 import '../styles/List.css';
 
 function List({ type, submit, cvsubmit = false }) {
@@ -41,7 +43,7 @@ function List({ type, submit, cvsubmit = false }) {
                   id={li.id}
                   onClick={removeElement}
                 >
-                  Remove
+                  <img src={removeBtn} id={li.id} alt="remove"></img>
                 </button>
               )}
             </div>
@@ -50,7 +52,7 @@ function List({ type, submit, cvsubmit = false }) {
       </ul>
       {submit ? null : (
         <button className="addbtn" onClick={updateList}>
-          Add
+          <img src={addBtn} alt={`add ${type} item`}></img>
         </button>
       )}
     </>

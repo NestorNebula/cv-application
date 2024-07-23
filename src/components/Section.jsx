@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Form from './Form';
 import List from './List';
+import editBtn from '../assets/edit.png';
+import submitBtn from '../assets/submit.png';
 import '../styles/Section.css';
 
 function Section({ type, cvsubmit = false }) {
@@ -26,11 +28,11 @@ function Section({ type, cvsubmit = false }) {
       {checkType()}
       {cvsubmit ? null : submit ? (
         <button className="editbtn" onClick={updateSubmit}>
-          Edit
+          <img src={editBtn} alt={`edit ${headerName}`}></img>
         </button>
       ) : (
         <button className="updatebtn" onClick={updateSubmit}>
-          Submit
+          <img src={submitBtn} alt={`submit ${headerName}`}></img>
         </button>
       )}
     </section>

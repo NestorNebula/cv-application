@@ -13,9 +13,9 @@ function Section({ type, cvsubmit = false }) {
 
   function checkType() {
     return type === 'informations' || type === 'aboutme' ? (
-      <Form type={type} submit={submit} />
+      <Form type={type} submit={submit || cvsubmit} />
     ) : (
-      <List type={type} submit={submit} />
+      <List type={type} submit={submit || cvsubmit} />
     );
   }
 
@@ -23,7 +23,7 @@ function Section({ type, cvsubmit = false }) {
     <section className={type}>
       <h2>{headerName}</h2>
       {checkType()}
-      {submit ? (
+      {cvsubmit ? null : submit ? (
         <button className="editbtn" onClick={updateSubmit}>
           Edit
         </button>

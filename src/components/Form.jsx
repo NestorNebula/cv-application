@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Input from './Input';
+import '../styles/Form.css';
 
 function Form({ type, id, submit, cvsubmit = false }) {
   const informations = [
@@ -125,7 +126,11 @@ function Form({ type, id, submit, cvsubmit = false }) {
     for (let i = 0; i < section.length; i++) {
       if (section[i].type === 'textarea') {
         if (submit === true) {
-          formContent.push(<p key={section[i].content + id}>{values[i]}</p>);
+          formContent.push(
+            <p className="paragraph" key={section[i].content + id}>
+              {values[i]}
+            </p>
+          );
         } else {
           formContent.push(
             <label
@@ -167,7 +172,7 @@ function Form({ type, id, submit, cvsubmit = false }) {
     return formContent;
   }
 
-  return <form>{populateForm().map((part) => part)}</form>;
+  return <form className={type}>{populateForm().map((part) => part)}</form>;
 }
 
 export default Form;

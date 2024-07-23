@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Form from './Form';
 import { v4 as uuid } from 'uuid';
+import '../styles/List.css';
 
 function List({ type, submit, cvsubmit = false }) {
   const [list, setList] = useState([
@@ -32,16 +33,26 @@ function List({ type, submit, cvsubmit = false }) {
       <ul>
         {list.map((li) => (
           <li key={li.id}>
-            <Form type={type} submit={submit} id={li.id} />
-            {submit ? null : (
-              <button className="removebtn" id={li.id} onClick={removeElement}>
-                Remove
-              </button>
-            )}
+            <div className="listcontent">
+              <Form type={type} submit={submit} id={li.id} />
+              {submit ? null : (
+                <button
+                  className="removebtn"
+                  id={li.id}
+                  onClick={removeElement}
+                >
+                  Remove
+                </button>
+              )}
+            </div>
           </li>
         ))}
       </ul>
-      {submit ? null : <button onClick={updateList}>Add</button>}
+      {submit ? null : (
+        <button className="addbtn" onClick={updateList}>
+          Add
+        </button>
+      )}
     </>
   );
 }

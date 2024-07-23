@@ -2,6 +2,15 @@
   font-size: 62.5%;
 }
 
+button {
+  padding: 0.5rem;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+}
+
 body {
   margin: 1rem;
   padding: 1rem;
@@ -12,7 +21,7 @@ body {
 }
 
 main {
-  padding: 1rem;
+  padding: 2.5rem;
   display: grid;
   gap: 5rem;
   box-shadow: 0px 0px 3px black;

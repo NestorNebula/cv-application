@@ -5,7 +5,11 @@ h2 {
   border-bottom: 1px solid black;
 }
 
-form {
+section {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+}
+
+.editbtn,
+.updatebtn {
+  justify-self: center;
 }

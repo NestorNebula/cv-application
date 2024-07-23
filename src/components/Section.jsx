@@ -24,9 +24,13 @@ function Section({ type, cvsubmit = false }) {
       <h2>{headerName}</h2>
       {checkType()}
       {submit ? (
-        <button onClick={updateSubmit}>Edit</button>
+        <button className="editbtn" onClick={updateSubmit}>
+          Edit
+        </button>
       ) : (
-        <button onClick={updateSubmit}>Submit</button>
+        <button className="updatebtn" onClick={updateSubmit}>
+          Submit
+        </button>
       )}
     </section>
   );

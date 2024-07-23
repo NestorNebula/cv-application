@@ -129,11 +129,13 @@ function Form({ type, id, submit, cvsubmit = false }) {
         } else {
           formContent.push(
             <label
+              className="arealabel"
               key={section[i].content + 'label' + id}
               htmlFor={section[i].content + id}
             >
               {section[i].label + ': '}
               <textarea
+                className={section[i].content}
                 id={section[i].content + id}
                 value={values[i]}
                 onChange={updates[i]}
@@ -144,11 +146,14 @@ function Form({ type, id, submit, cvsubmit = false }) {
       } else {
         if (submit === true) {
           formContent.push(
-            <div key={section[i].content + id}>{values[i]}</div>
+            <div className={section[i].content} key={section[i].content + id}>
+              {values[i]}
+            </div>
           );
         } else {
           formContent.push(
             <Input
+              className={section[i].content}
               content={section[i].content + id}
               label={section[i].label}
               value={values[i]}

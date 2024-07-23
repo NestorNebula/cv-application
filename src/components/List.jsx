@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Form from './Form';
 import { v4 as uuid } from 'uuid';
 
-function List({ type, cvsubmit = false }) {
+function List({ type, submit, cvsubmit = false }) {
   const [list, setList] = useState([
     {
       id: uuid(),
@@ -29,7 +29,7 @@ function List({ type, cvsubmit = false }) {
       <ul>
         {list.map((li) => (
           <li key={li.id}>
-            <Form type={type} id={li.id} />
+            <Form type={type} submit={submit} id={li.id} />
           </li>
         ))}
       </ul>

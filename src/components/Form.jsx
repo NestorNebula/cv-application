@@ -65,6 +65,13 @@ function Form({ type, id, submit, cvsubmit = false }) {
       type: 'input',
     },
   ];
+  const aboutme = [
+    {
+      content: 'aboutme',
+      label: 'Aboutme',
+      type: 'textarea',
+    },
+  ];
   let section;
   switch (type) {
     case 'informations':
@@ -80,19 +87,9 @@ function Form({ type, id, submit, cvsubmit = false }) {
       section = skills;
       break;
     default:
-      const [text, setText] = useState('');
-
-      function updateText(e) {
-        setText(e.target.value);
-        console.log(text);
-      }
-      return (
-        <form>
-          <label htmlFor="aboutme">About me: </label>
-          <textarea id="aboutme" value={text} onChange={updateText}></textarea>
-        </form>
-      );
+      section = aboutme;
   }
+
   const [first, setFirst] = useState('');
   const [second, setSecond] = useState('');
   const [third, setThird] = useState('');
@@ -122,29 +119,39 @@ function Form({ type, id, submit, cvsubmit = false }) {
     const formContent = [];
     for (let i = 0; i < section.length; i++) {
       if (section[i].type === 'textarea') {
-        formContent.push(
-          <label
-            key={section[i.content] + 'label' + id}
-            htmlFor={section[i].content + id}
-          >
-            {section[i].label}
-            <textarea
-              id={section[i].content + id}
-              value={values[i]}
-              onChange={updates[i]}
-            ></textarea>
-          </label>
-        );
+        if (submit === true) {
+          formContent.push(<p key={section[i].content + id}>{values[i]}</p>);
+        } else {
+          formContent.push(
+            <label
+              key={section[i].content + 'label' + id}
+              htmlFor={section[i].content + id}
+            >
+              {section[i].label + ': '}
+              <textarea
+                id={section[i].content + id}
+                value={values[i]}
+                onChange={updates[i]}
+              ></textarea>
+            </label>
+          );
+        }
       } else {
-        formContent.push(
-          <Input
-            content={section[i].content + id}
-            label={section[i].label}
-            value={values[i]}
-            update={updates[i]}
-            key={section[i].content + id}
-          />
-        );
+        if (submit === true) {
+          formContent.push(
+            <div key={section[i].content + id}>{values[i]}</div>
+          );
+        } else {
+          formContent.push(
+            <Input
+              content={section[i].content + id}
+              label={section[i].label}
+              value={values[i]}
+              update={updates[i]}
+              key={section[i].content + id}
+            />
+          );
+        }
       }
     }
     return formContent;

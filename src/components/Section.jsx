@@ -3,7 +3,7 @@ import Form from './Form';
 import List from './List';
 
 function Section({ type, cvsubmit = false }) {
-  const [submit, setSubmit] = useState(true);
+  const [submit, setSubmit] = useState(false);
 
   function updateSubmit() {
     setSubmit(!submit);
@@ -11,9 +11,9 @@ function Section({ type, cvsubmit = false }) {
 
   function checkType() {
     return type === 'informations' || type === 'aboutme' ? (
-      <Form type={type} />
+      <Form type={type} submit={submit} />
     ) : (
-      <List type={type} />
+      <List type={type} submit={submit} />
     );
   }
 

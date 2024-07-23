@@ -10,6 +10,11 @@ section {
   display: grid;
 }
 
+section > ul,
+section > form {
+  padding: 1rem;
+}
+
 .editbtn,
 .updatebtn {
   position: absolute;

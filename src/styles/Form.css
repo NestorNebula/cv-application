@@ -1,6 +1,7 @@
 form {
   display: grid;
   grid-auto-flow: column;
+  gap: 0.5rem 1rem;
 }
 
 form.experience {

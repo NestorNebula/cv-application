@@ -1,8 +1,9 @@
 .listcontent {
   display: flex;
+  gap: 0.5rem;
   align-items: center;
 }
 
 .addbtn {
-  justify-self: center;
+  justify-self: start;
 }

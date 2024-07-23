@@ -4,6 +4,11 @@
   align-items: center;
 }
 
+ul {
+  display: grid;
+  gap: 2rem;
+}
+
 li {
   list-style: none;
 }

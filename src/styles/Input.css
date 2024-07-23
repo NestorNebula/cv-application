@@ -1,0 +1,25 @@
+.input {
+  position: relative;
+}
+
+.inputlabel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.2s ease-in;
+}
+
+input:focus + .inputlabel {
+  top: -2rem;
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+input:focus {
+  padding-bottom: 0.25rem;
+  border-color: #06b6d4;
+}

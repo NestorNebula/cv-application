@@ -27,13 +27,13 @@ function Form({ type, id, submit, cvsubmit = false }) {
   ];
   const education = [
     {
-      content: 'schoolname',
-      label: 'School Name',
+      content: 'study',
+      label: 'Study',
       type: 'input',
     },
     {
-      content: 'study',
-      label: 'Study',
+      content: 'schoolname',
+      label: 'School Name',
       type: 'input',
     },
     {

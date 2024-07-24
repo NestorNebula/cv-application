@@ -12,10 +12,10 @@ function App() {
     <div className="cv">
       <main>
         <Section type="informations" cvsubmit={cvsubmit} />
+        <Section type="skills" cvsubmit={cvsubmit} />
+        <Section type="aboutme" cvsubmit={cvsubmit} />
         <Section type="education" cvsubmit={cvsubmit} />
         <Section type="experience" cvsubmit={cvsubmit} />
-        <Section type="aboutme" cvsubmit={cvsubmit} />
-        <Section type="skills" cvsubmit={cvsubmit} />
         {cvsubmit ? null : (
           <button className="cvsubmitbtn" onClick={updateCvSubmit}>
             Submit CV

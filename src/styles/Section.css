@@ -3,6 +3,9 @@ h2 {
   text-transform: uppercase;
   margin-bottom: 1.5rem;
   border-bottom: 1px solid black;
+  font-family: 'Cinzel', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
 section {

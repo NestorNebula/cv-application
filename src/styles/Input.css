@@ -21,6 +21,7 @@ input {
   border-bottom: 2px solid rgba(0, 0, 0, 0.5);
   outline: none;
   padding-bottom: 0.1rem;
+  max-width: max(10vw, 10rem);
 }
 
 input:focus {

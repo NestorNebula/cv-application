@@ -11,11 +11,15 @@ function App() {
   return (
     <div className="cv">
       <main>
-        <Section type="informations" cvsubmit={cvsubmit} />
-        <Section type="skills" cvsubmit={cvsubmit} />
-        <Section type="aboutme" cvsubmit={cvsubmit} />
-        <Section type="education" cvsubmit={cvsubmit} />
-        <Section type="experience" cvsubmit={cvsubmit} />
+        <div className="aside">
+          <Section type="informations" cvsubmit={cvsubmit} />
+          <Section type="skills" cvsubmit={cvsubmit} />
+        </div>
+        <div className="mainsection">
+          <Section type="aboutme" cvsubmit={cvsubmit} />
+          <Section type="education" cvsubmit={cvsubmit} />
+          <Section type="experience" cvsubmit={cvsubmit} />
+        </div>
         {cvsubmit ? null : (
           <button className="cvsubmitbtn" onClick={updateCvSubmit}>
             Submit CV

@@ -72,14 +72,21 @@ main {
   box-shadow: 0px 0px 3px black;
   justify-self: center;
   font-size: 1.75rem;
-  min-width: min(100vw, 800px);
+  min-width: min(95vw, 800px);
+}
+
+.aside,
+.mainsection {
+  display: grid;
+  gap: 5rem;
+  align-content: start;
 }
 
 section {
   align-content: start;
 }
 
-section.informations {
+/* section.informations {
   grid-area: 1 / 1 / 2 / 2;
 }
 
@@ -93,7 +100,7 @@ section.skills {
 
 section.experience {
   grid-area: 3 / 2 / 4 / 3;
-}
+} */
 
 .cvsubmitbtn {
   grid-column: 1 / 3;

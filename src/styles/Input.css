@@ -10,7 +10,8 @@
   font-size: 1.5rem;
 }
 
-input:focus + .inputlabel {
+input:focus + .inputlabel,
+input:not(:placeholder-shown) + .inputlabel {
   top: -2rem;
 }
 

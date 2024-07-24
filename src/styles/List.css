@@ -1,5 +1,6 @@
 .listcontent {
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
   gap: 0.5rem;
   align-items: center;
 }

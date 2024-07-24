@@ -40,7 +40,7 @@ body {
 main {
   padding: 2.5rem;
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1fr 1.75fr;
   gap: 5rem;
   box-shadow: 0px 0px 3px black;
   justify-self: center;

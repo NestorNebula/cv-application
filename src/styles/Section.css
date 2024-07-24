@@ -8,6 +8,11 @@ h2 {
     sans-serif;
 }
 
+.informationsh2,
+.skillsh2 {
+  border-bottom: 1px solid white;
+}
+
 section {
   position: relative;
   display: grid;

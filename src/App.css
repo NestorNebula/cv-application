@@ -55,24 +55,18 @@ textarea {
   overflow: visible;
 }
 
-body {
-  margin: 1rem;
-  padding: 1rem;
-}
-
 .cv {
   display: grid;
 }
 
 main {
-  padding: 2.5rem;
   display: grid;
   grid-template-columns: 1fr 1.75fr;
-  gap: 5rem;
   box-shadow: 0px 0px 3px black;
   justify-self: center;
   font-size: 1.75rem;
   min-width: min(95vw, 800px);
+  min-height: min(95vh, 800px);
 }
 
 .aside,
@@ -80,6 +74,12 @@ main {
   display: grid;
   gap: 5rem;
   align-content: start;
+  padding: 2.5rem;
+}
+
+.aside {
+  background-color: #155e75;
+  color: white;
 }
 
 section {

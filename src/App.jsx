@@ -21,9 +21,11 @@ function App() {
           <Section type="experience" cvsubmit={cvsubmit} />
         </div>
         {cvsubmit ? null : (
-          <button className="cvsubmitbtn" onClick={updateCvSubmit}>
-            Submit CV
-          </button>
+          <div className="submitbtndiv">
+            <button className="cvsubmitbtn" onClick={updateCvSubmit}>
+              Submit CV
+            </button>
+          </div>
         )}
       </main>
     </div>

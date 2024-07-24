@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: 'RobotoLight';
+  src: url('./fonts/Roboto/Roboto-Light.ttf');
+}
+
+@font-face {
   font-family: 'Raleway';
   src: url('./fonts/Raleway/static/Raleway-Light.ttf');
 }

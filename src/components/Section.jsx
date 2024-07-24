@@ -24,7 +24,7 @@ function Section({ type, cvsubmit = false }) {
 
   return (
     <section className={type}>
-      <h2>{headerName}</h2>
+      {cvsubmit && type === 'informations' ? null : <h2>{headerName}</h2>}
       {checkType()}
       {cvsubmit ? null : submit ? (
         <button className="editbtn" onClick={updateSubmit}>

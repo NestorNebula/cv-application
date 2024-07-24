@@ -74,7 +74,7 @@ function Form({ type, id, submit, cvsubmit = false }) {
   const aboutme = [
     {
       content: 'aboutme',
-      label: 'Aboutme',
+      label: 'About me',
       type: 'textarea',
     },
   ];
@@ -133,19 +133,23 @@ function Form({ type, id, submit, cvsubmit = false }) {
           );
         } else {
           formContent.push(
-            <label
-              className="arealabel"
-              key={section[i].content + 'label' + id}
-              htmlFor={section[i].content + id}
-            >
-              {section[i].label + ': '}
+            <div className="areadiv" key={section[i].content + id}>
               <textarea
                 className={section[i].content}
                 id={section[i].content + id}
+                rows={1}
+                placeholder=""
                 value={values[i]}
                 onChange={updates[i]}
               ></textarea>
-            </label>
+              <label
+                className="arealabel"
+                key={section[i].content + 'label' + id}
+                htmlFor={section[i].content + id}
+              >
+                {section[i].label}
+              </label>
+            </div>
           );
         }
       } else {

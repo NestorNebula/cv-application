@@ -8,8 +8,21 @@ form.experience {
   grid-template-columns: repeat(3, 1fr);
   grid-auto-flow: row;
 }
-
-form.experience > .arealabel,
-.paragraph {
+.areadiv {
+  margin: 3rem 0;
+  position: relative;
   grid-column: 1 / 4;
+}
+
+.arealabel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.2s ease-in;
+  font-size: 1.5rem;
+}
+
+textarea:focus + .arealabel,
+textarea:not(:placeholder-shown) + .arealabel {
+  top: -2rem;
 }

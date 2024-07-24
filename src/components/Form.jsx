@@ -28,7 +28,7 @@ function Form({ type, id, submit, cvsubmit = false }) {
   const education = [
     {
       content: 'study',
-      label: 'Study',
+      label: 'Title of Study',
       type: 'input',
     },
     {

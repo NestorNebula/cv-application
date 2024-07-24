@@ -35,6 +35,11 @@ form.experience {
   font-size: 1.5rem;
 }
 
+textarea:focus {
+  padding-bottom: 0.25rem;
+  border-color: #06b6d4;
+}
+
 textarea:focus + .arealabel,
 textarea:not(:placeholder-shown) + .arealabel {
   top: -2rem;

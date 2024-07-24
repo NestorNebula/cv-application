@@ -12,10 +12,6 @@ form.informations,
 form.experience {
   grid-auto-flow: row;
 }
-
-form.experience {
-  grid-template-columns: repeat(3, 1fr);
-}
 .areadiv {
   margin: 3rem 0;
   position: relative;
@@ -33,4 +29,18 @@ form.experience {
 textarea:focus + .arealabel,
 textarea:not(:placeholder-shown) + .arealabel {
   top: -2rem;
+}
+
+form.experience > .paragraph {
+  grid-column: 1 / 4;
+}
+
+div.study,
+div.position {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  max-width: 66ch;
 }

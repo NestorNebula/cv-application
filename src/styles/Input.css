@@ -31,6 +31,8 @@ form.skills input {
   border-bottom: 2px solid white;
 }
 
+form.informations input:focus,
+form.skills input:focus,
 input:focus {
   padding-bottom: 0.25rem;
   border-color: #06b6d4;

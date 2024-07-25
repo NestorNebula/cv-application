@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Section from './components/Section';
+import Dialog from './components/Dialog';
 import './App.css';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
   }
   return (
     <div className="cv">
+      <Dialog />
       <main>
         <div className="aside">
           <Section type="informations" cvsubmit={cvsubmit} />

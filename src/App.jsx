@@ -11,7 +11,6 @@ function App() {
   }
   return (
     <div className="cv">
-      <Dialog />
       <main>
         <div className="aside">
           <Section type="informations" cvsubmit={cvsubmit} />
@@ -23,7 +22,8 @@ function App() {
           <Section type="experience" cvsubmit={cvsubmit} />
         </div>
         {cvsubmit ? null : (
-          <div className="submitbtndiv">
+          <div className="cvbuttons">
+            <Dialog />
             <button className="cvsubmitbtn" onClick={updateCvSubmit}>
               Submit CV
             </button>

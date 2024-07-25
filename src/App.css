@@ -102,8 +102,10 @@ section.experience {
   grid-area: 3 / 2 / 4 / 3;
 } */
 
-.submitbtndiv {
+.cvbuttons {
   grid-column: 1 / 3;
+  display: grid;
+  grid-template-columns: 1fr 1.75fr;
   background-color: black;
   text-align: center;
 }

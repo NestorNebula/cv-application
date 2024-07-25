@@ -16,9 +16,15 @@ function Dialog() {
     setOpen(false);
   }
 
+  function closeOnEsc(e) {
+    if (e.key === 'Escape') {
+      setOpen(false);
+    }
+  }
+
   return (
     <>
-      <button className="helpbtn" onClick={openDialog}>
+      <button className="helpbtn" onClick={openDialog} onKeyDown={closeOnEsc}>
         Help
       </button>
       <dialog open={open}>

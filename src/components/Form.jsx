@@ -121,6 +121,13 @@ function Form({ type, id, submit, cvsubmit = false }) {
     },
   ];
 
+  function changeAreaHeight(e) {
+    e.target.style.height =
+      e.target.scrollHeight > e.target.clientHeight
+        ? e.target.scrollHeight + 'px'
+        : 'auto';
+  }
+
   function populateForm() {
     const formContent = [];
     for (let i = 0; i < section.length; i++) {
@@ -138,6 +145,7 @@ function Form({ type, id, submit, cvsubmit = false }) {
                 className={section[i].content}
                 id={section[i].content + id}
                 rows={1}
+                onKeyUp={changeAreaHeight}
                 placeholder=""
                 value={values[i]}
                 onChange={updates[i]}

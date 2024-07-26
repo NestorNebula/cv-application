@@ -51,6 +51,9 @@ function App() {
         >
           Pencil icons created by riajulislam - Flaticon
         </a>
+        <a href="https://www.flaticon.com/free-icons/cv" title="cv icons">
+          Cv icons created by Freepik - Flaticon
+        </a>
       </div>
     </>
   );

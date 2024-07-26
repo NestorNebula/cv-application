@@ -117,3 +117,19 @@ section.experience {
 .cvsubmitbtn:hover {
   text-decoration: underline;
 }
+
+.credits {
+  margin: 3rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: #155e75;
+}
+
+a:hover {
+  text-decoration: underline;
+}

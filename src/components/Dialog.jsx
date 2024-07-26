@@ -34,7 +34,7 @@ function Dialog() {
             This page allows you to create a CV by typing your informations.
           </div>
           <div>
-            Enter each informations that suits into your CV and leave blank the
+            Add each information that suits into your CV and leave blank the
             inputs that doesn't make sense. (You can also remove some by
             clicking on <img src={removeBtn} alt="remove button" />)
           </div>
@@ -43,8 +43,8 @@ function Dialog() {
             more of them by clicking on <img src={addBtn} alt="add button" />.
           </div>
           <div>
-            When you entered all the informations in a section, you can click on{' '}
-            <img src={submitBtn} alt="submit button" />. This will give you a
+            When you've typed all the informations in a section, you can click
+            on <img src={submitBtn} alt="submit button" />. This will give you a
             preview of what this part of the CV will look like.
           </div>
           <div>

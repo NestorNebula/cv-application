@@ -2,4 +2,6 @@
 
 ## Description
 
-This project's goal is to create a CV Application that allows user to create a CV/Résumé.
+This project allows the user to create a CV by adding his informations into the page.
+
+It was built by using React and Vite.

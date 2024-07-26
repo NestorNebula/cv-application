@@ -71,7 +71,7 @@ div.position {
 }
 
 form > div:not(.areadiv) {
-  max-width: 15ch;
+  max-width: 20ch;
 }
 
 .paragraph {
